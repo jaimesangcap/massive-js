@@ -1,5 +1,5 @@
 CREATE TABLE ${schema~}.${table~}(
-  id serial PRIMARY KEY,
+  id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
   body jsonb NOT NULL,
   search tsvector,
   created_at timestamptz DEFAULT now()
